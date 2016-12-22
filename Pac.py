@@ -43,3 +43,25 @@ class Pac():
         xDiff = x1 - x2
         yDiff = y1 - y2
         return math.sqrt(xDiff**2 + yDiff**2)  
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        #not sure how I feel bout this - Connardunn20160
