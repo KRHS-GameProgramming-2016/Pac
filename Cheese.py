@@ -1,15 +1,8 @@
-import pygame, sys, math, random
-from Ball import *
-from Wall import *
-from Level import *
-from PlayerBall import *
-pygame.init()
+import pygame, sys, math
 
-clock = pygame.time.Clock()
-.
-width = 800 
-height = 600
-size = width, height
-screen = pygame.display.set_mode(size)
-
-bgColor = r,g,b = 0, 0, 0
+class Wall():
+    def __init__(self, pos=[0,0], size=None):
+        self.image = pygame.image.load("C:\Users\PLTW\Documents\Game Programming\Alexander DiDominic\Pac\Resources\Wall\Dunanana_cheese_man.jpd")
+        if size:
+            self.image = pygame.transform.scale(self.image, [size,size])
+        self.rect = self.image.get_rect(center = pos
