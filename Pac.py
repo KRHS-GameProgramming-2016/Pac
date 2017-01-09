@@ -12,7 +12,8 @@ class Pac():
         self.radius = self.rect.width/2 -1
         self.didBounceX = False
         self.didBounceY = False
-
+        self.living = True
+        
     def move(self):
         self.didBounceX = False
         self.didBounceY = False
@@ -33,11 +34,8 @@ class Pac():
         if self.rect.right > other.rect.left and self.rect.left < other.rect.right:
             if self.rect.bottom > other.rect.top and self.rect.top < other.rect.bottom:
                 if self.dist(other.rect.center) < self.radius + other.radius:
-                    if not self.didBounceX:
-                        self.speedx = -self.speedx
-                    if not self.didBounceY:
-                        self.speedy = -self.speedy
-        
+                    self.living = False
+                    
     def dist(self, pt):
         x1 = self.rect.center[0]
         y1 = self.rect.center[1]
