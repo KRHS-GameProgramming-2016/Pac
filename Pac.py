@@ -1,9 +1,10 @@
 import pygame, sys, math
 
 class Pac():
-    def __init__(self, image, speed=[0,0], pos=[0,0]):
+    def __init__(self, image, speed=[0,0], pos=[0,0], size=None):
         self.image = pygame.image.load("Resources/Pac/"+image)
-        
+        if size:
+            self.image = pygame.transform.scale(self.image, [size,size])
         self.rect = self.image.get_rect(center = pos)
         self.speedx = speed[0]
         self.speedy = speed[1]
@@ -43,25 +44,4 @@ class Pac():
         xDiff = x1 - x2
         yDiff = y1 - y2
         return math.sqrt(xDiff**2 + yDiff**2)  
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        #not sure how I feel bout this - Connardunn20160
+    
