@@ -1,7 +1,7 @@
 import pygame, sys, math
 from Wall import *
 class Level():
-   def __init__(self, levelFile):
+    def __init__(self, levelFile):
         self.walls = []
         self.players = []
         self.cheeses = []
@@ -42,7 +42,7 @@ class Level():
                                   #]
                 
                 if c == 'c':
-                    #self.cheeses += [Cheese([x*self.tileSize + self.tileSize/2,
-                                        #y*self.tileSize + self.tileSize/2],
-                                       #self.tileSize)
-                                  #]
+                    self.cheeses += [Cheese([x*self.tileSize + self.tileSize/2,
+                                        y*self.tileSize + self.tileSize/2],
+                                       self.tileSize)
+                                  ]
