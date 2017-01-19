@@ -1,12 +1,14 @@
 import pygame, sys, math
 from Wall import *
+from Cheese import *
+from Pac import *
 class Level():
-   def __init__(self, levelFile):
+    def __init__(self, levelFile):
         self.walls = []
         self.players = []
         self.cheeses = []
         self.ghosts = []
-        
+        self.tileSize = 25
         self.loadLevel(levelFile) 
         
     def loadLevel(self, levelFile):        
@@ -42,7 +44,14 @@ class Level():
                                   #]
                 
                 if c == 'c':
-                    #self.cheeses += [Cheese([x*self.tileSize + self.tileSize/2,
-                                        #y*self.tileSize + self.tileSize/2],
-                                       #self.tileSize)
-                                  #]
+                    self.cheeses += [Cheese([x*self.tileSize + self.tileSize/2,
+                                        y*self.tileSize + self.tileSize/2],
+                                       self.tileSize)
+                                  ]
+                if c == 'g':
+                    self.ghosts += [Pac("RedTestPac.png",
+                                        [3,3],
+                                        [x*self.tileSize + self.tileSize/2,
+                                        y*self.tileSize + self.tileSize/2],
+                                       self.tileSize)
+                                  ]

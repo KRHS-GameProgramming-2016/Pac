@@ -1,7 +1,9 @@
 import pygame, sys, math
 from Pac import *
-def __init__(self, maxSpeed =5 , pos=[0,0]):
-        Ball.__init__(self, "playerball_up_1.png", [0,0], pos, None)
+
+class PlayerPac(Pac):
+    def __init__(self, maxSpeed =5 , pos=[0,0]):
+        Pac.__init__(self, "playerball_up_1.png", [0,0], pos, None)
         self.maxSpeed = maxSpeed     
         self.images = [pygame.image.load("rsc/ball/playerball_up_1.png"),
                        pygame.image.load("rsc/ball/playerball_up_2.png")
@@ -12,7 +14,7 @@ def __init__(self, maxSpeed =5 , pos=[0,0]):
         self.animationTimerMax = .2 * 60 #seconds * 60 fps
         
     def move(self):
-        Ball.move(self)
+        Pac.move(self)
         self.animate()
         
     def animate(self):
@@ -62,7 +64,7 @@ def __init__(self, maxSpeed =5 , pos=[0,0]):
             self.speedy = 0
             self.didBounceY = True
             
-    def bounceBall(self, other):
+    def bouncePac(self, other):
         if self.rect.right > other.rect.left and self.rect.left < other.rect.right:
             if self.rect.bottom > other.rect.top and self.rect.top < other.rect.bottom:
                 if self.dist(other.rect.center) < self.radius + other.radius:

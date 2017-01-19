@@ -17,8 +17,10 @@ screen = pygame.display.set_mode(size)
 
 bgColor = r,g,b = 67, 75, 198
 
-pacs = [Pac("RedTestPac.png", [1,1], [width/2, height/2]),
-        Pac("RedTestPac.png", [-1,-1], [width/3, height/3])]
+level = Level("level1.lvl")
+pacs = level.ghosts
+cheeses = level.cheeses
+walls = level.walls
 
 while True:
     for event in pygame.event.get():
@@ -30,6 +32,10 @@ while True:
         
     bgColor = r,g,b
     screen.fill(bgColor)
+    for wall in walls:
+        screen.blit(wall.image, wall.rect)
+    for cheese in cheeses:
+        screen.blit(cheese.image, cheese.rect)
     for pac in pacs:
         screen.blit(pac.image, pac.rect)
     pygame.display.flip()
