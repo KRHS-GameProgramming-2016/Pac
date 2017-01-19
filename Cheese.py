@@ -5,4 +5,4 @@ class Wall():
         self.image = pygame.image.load("C:\Users\PLTW\Documents\Game Programming\Alexander DiDominic\Pac\Resources\Wall\Dunanana_cheese_man.jpd")
         if size:
             self.image = pygame.transform.scale(self.image, [size,size])
-        self.rect = self.image.get_rect(center = pos
+        self.rect = self.image.get_rect(center = pos)

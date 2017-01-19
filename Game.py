@@ -17,8 +17,8 @@ screen = pygame.display.set_mode(size)
 
 bgColor = r,g,b = 67, 75, 198
 
-pacs = [Pac("RedTestPac.png", [1,1], [width/2, height/2]),
-        Pac("RedTestPac.png", [-1,-1], [width/3, height/3])]
+level = Level("level.py")
+Cheese = Cheese
 
 while True:
     for event in pygame.event.get():
