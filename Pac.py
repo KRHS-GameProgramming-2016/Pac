@@ -36,6 +36,16 @@ class Pac():
                 if self.dist(other.rect.center) < self.radius + other.radius:
                     self.living = False
                     
+    def bounceWall(self, other):
+        if self.rect.right > other.rect.left and self.rect.left < other.rect.right:
+            if self.rect.bottom > other.rect.top and self.rect.top < other.rect.bottom:
+                if abs((self.rect.x - other.rect.x)) > abs((self.rect.y - other.rect.y)):
+                    self.speedx = -self.speedx
+                else:
+                    self.speedy = -self.speedy
+                self.speed = [self.speedx, self.speedy]
+                self.rect = self.rect.move(self.speed)
+                    
     def dist(self, pt):
         x1 = self.rect.center[0]
         y1 = self.rect.center[1]
