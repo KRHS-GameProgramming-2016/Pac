@@ -29,6 +29,8 @@ while True:
     for pac in pacs:
         pac.move()
         pac.bounceScreen(size)
+        for wall in walls:
+            pac.bounceWall(wall)
         
     bgColor = r,g,b
     screen.fill(bgColor)
