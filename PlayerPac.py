@@ -2,11 +2,11 @@ import pygame, sys, math
 from Pac import *
 
 class PlayerPac(Pac):
-    def __init__(self, maxSpeed =5 , pos=[0,0]):
-        Pac.__init__(self, "playerball_up_1.png", [0,0], pos, None)
+    def __init__(self, maxSpeed =5 , pos=[0,0], size = None):
+        Pac.__init__(self, "RedTestPac.png", [0,0], pos, size)
         self.maxSpeed = maxSpeed     
-        self.images = [pygame.image.load("rsc/ball/playerball_up_1.png"),
-                       pygame.image.load("rsc/ball/playerball_up_2.png")
+        self.images = [pygame.image.load("Resources/PlayerPac/PlayerTestPac1.png"),
+                       pygame.image.load("Resources/PlayerPac/PlayerTestPac2.png")
                       ]
         self.frame = 0
         self.maxFrame = len(self.images) - 1

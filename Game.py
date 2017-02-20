@@ -21,16 +21,25 @@ level = Level("level1.lvl")
 pacs = level.ghosts
 cheeses = level.cheeses
 walls = level.walls
+player = level.players[0]
 
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
+      
+    player.move()
+    player.bounceScreen(size)
+    for wall in walls:
+        player.bounceWall(wall)
         
     for pac in pacs:
         pac.move()
         pac.bounceScreen(size)
         for wall in walls:
             pac.bounceWall(wall)
+    
+    
+    
         
     bgColor = r,g,b
     screen.fill(bgColor)
@@ -40,6 +49,7 @@ while True:
         screen.blit(cheese.image, cheese.rect)
     for pac in pacs:
         screen.blit(pac.image, pac.rect)
+    screen.blit(player.image, player.rect)
     pygame.display.flip()
     clock.tick(60)
     

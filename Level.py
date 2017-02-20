@@ -2,6 +2,8 @@ import pygame, sys, math
 from Wall import *
 from Cheese import *
 from Pac import *
+from PlayerPac import *
+
 class Level():
     def __init__(self, levelFile):
         self.walls = []
@@ -37,11 +39,12 @@ class Level():
                                         y*self.tileSize + self.tileSize/2],
                                        self.tileSize)
                                   ]
-                #if c == 'p':
-                    #self.players += [Player([x*self.tileSize + self.tileSize/2,
-                                        #y*self.tileSize + self.tileSize/2],
-                                       #self.tileSize)
-                                  #]
+                if c == 'p':
+                    self.players += [PlayerPac(5,
+                                       [x*self.tileSize + self.tileSize/2,
+                                        y*self.tileSize + self.tileSize/2],
+                                       self.tileSize)
+                                  ]
                 
                 if c == 'c':
                     self.cheeses += [Cheese([x*self.tileSize + self.tileSize/2,
