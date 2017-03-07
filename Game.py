@@ -26,11 +26,32 @@ player = level.players[0]
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                player.go("up")
+            if event.key == pygame.K_DOWN:
+                player.go("down")
+            if event.key == pygame.K_LEFT:
+                player.go("left")
+            if event.key == pygame.K_RIGHT:
+                player.go("right")
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_UP:
+                player.go("stop up")
+            if event.key == pygame.K_DOWN:
+                player.go("stop down")
+            if event.key == pygame.K_LEFT:
+                player.go("stop left")
+            if event.key == pygame.K_RIGHT:
+                player.go("stop right")
       
     player.move()
     player.bounceScreen(size)
     for wall in walls:
         player.bounceWall(wall)
+    for cheese in cheeses:    
+        if player.bounceCheese(cheese):
+            cheeses.remove(cheese)
         
     for pac in pacs:
         pac.move()
