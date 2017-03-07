@@ -46,7 +46,7 @@ class Level():
                                        self.tileSize)
                                   ]
                 
-                if c == 'c':
+                if c == ' ':
                     self.cheeses += [Cheese([x*self.tileSize + self.tileSize/2,
                                         y*self.tileSize + self.tileSize/2],
                                        self.tileSize)
