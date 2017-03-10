@@ -4,7 +4,7 @@ from Pac import *
 class PlayerPac(Pac):
     def __init__(self, maxSpeed =5 , pos=[0,0], size = None):
         Pac.__init__(self, "RedTestPac.png", [0,0], pos, size)
-        self.maxSpeed = maxSpeed     
+        self.maxSpeed = maxSpeed
         self.images = [pygame.image.load("Resources/PlayerPac/PlayerTestPac1.png"),
                        pygame.image.load("Resources/PlayerPac/PlayerTestPac2.png")
                       ]
