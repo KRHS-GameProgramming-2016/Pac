@@ -1,4 +1,4 @@
-import pygame, sys,
+import pygame, sys, math
 from Wall import *
 from Cheese import *
 from Pac import *
