@@ -71,6 +71,12 @@ class PlayerPac(Pac):
                     return True
         return False
         
+    def bounceCheese(self, other):
+        if self.rect.right > other.rect.left and self.rect.left < other.rect.right:
+            if self.rect.bottom > other.rect.top and self.rect.top < other.rect.bottom:
+                return True
+        return False
+        
     def bounceWall(self, other):
         if self.rect.right > other.rect.left and self.rect.left < other.rect.right:
             if self.rect.bottom > other.rect.top and self.rect.top < other.rect.bottom:

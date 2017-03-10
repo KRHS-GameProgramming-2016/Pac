@@ -1,0 +1,22 @@
+import pygame, sys, math 
+
+class Score():
+    def __init__(self, pos):
+        self.value = 0
+        self.font = pygame.font.Font("Pac/Resources/Fonts/PercyPixel.tff", 51)
+        self.image = self.font.render("Score: " + str(self.value), True, (100,0,30))
+        self.rect = self.image.get_rect(center = pos)
+    
+    def change(self, amount = 1):
+        self.value += amount
+        if self.value <= 0:
+            self.value = 0
+        self.image = self.font.render("Score: " + str(self.value), True, (100,0,30))
+        self.rect = self.image.get_rect(center = self.rect.center)
+        
+    def setValue(self, amount = 0):
+        self.value = amount
+        if self.value <= 0:
+            self.value = 0
+        self.image = self.font.render("Score: " + str(self.value), True, (100,0,30))
+        self.rect = self.image.get_rect(center = self.rect.center)
