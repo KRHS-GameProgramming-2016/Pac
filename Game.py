@@ -5,6 +5,7 @@ from Pac import *
 from PlayerPac import *
 from Wall import *
 from Level import *
+from Score import *
 
 pygame.init()
 
@@ -22,6 +23,7 @@ pacs = level.ghosts
 cheeses = level.cheeses
 walls = level.walls
 player = level.players[0]
+score = Score([100, height - 30])
 
 while True:
     for event in pygame.event.get():
@@ -51,6 +53,7 @@ while True:
         player.bounceWall(wall)
     for cheese in cheeses:    
         if player.bounceCheese(cheese):
+            score.change(1)
             cheeses.remove(cheese)
         
     for pac in pacs:
@@ -71,6 +74,7 @@ while True:
     for pac in pacs:
         screen.blit(pac.image, pac.rect)
     screen.blit(player.image, player.rect)
+    screen.blit(score.image, score.rect)
     pygame.display.flip()
     clock.tick(60)
     
