@@ -51,6 +51,7 @@ class Level():
                                         y*self.tileSize + self.tileSize/2],
                                        self.tileSize)
                                   ]
+                
                 if c == 'g':
                     self.ghosts += [Pac("RedTestPac.png",
                                         [3,3],
